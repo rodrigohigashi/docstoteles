@@ -1,6 +1,6 @@
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader    # load documents
-from langchain_community.embeddings import HuggingFaceEmbeddings                # embeddings integration
+from langchain_community.embeddings import FastEmbedEmbeddings                  # embeddings integration
 from langchain_community.vectorstores import FAISS                              # vector database
 from langchain.text_splitter import RecursiveCharacterTextSplitter              # split documents into smaller chunks
 from langchain_groq import ChatGroq                                             # Groq API
@@ -10,8 +10,8 @@ from langchain.prompts import PromptTemplate                                    
 class RAGService:
     def __init__(self):
         # Initialize embeddings
-        self.embeddings = HuggingFaceEmbeddings(
-            model_name="all-MiniLM-L6-v2"                   # embedding model
+        self.embeddings = FastEmbedEmbeddings(
+            model_name="BAAI/bge-small-en-v1.5"                   # embedding model
         )
         
         # Initialize LLM

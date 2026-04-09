@@ -8,15 +8,20 @@ def show():
         st.warning("Selecione uma coleção na barra lateral para começar.")
         return
     
-    #  Mostra a coleção ativa
+    # Mostra a coleção ativa
     st.info(f"📂 **Coleção ativa:** {st.session_state.collection}")
-    
-    rag = RAGService()
-    loaded = rag.load_collection(st.session_state.collection)
-    if not loaded:
-        st.error("Não foi possível carregar a coleção selecionada.")
-        return
-    
+
+    # Só carrega se ainda não carregou, ou se a coleção mudou
+    if "rag" not in st.session_state or st.session_state.get("loaded_collection") != st.session_state.collection:
+        with st.spinner("Carregando coleção..."):
+            rag = RAGService()
+            loaded = rag.load_collection(st.session_state.collection)
+            if not loaded:
+                st.error("Não foi possível carregar a coleção selecionada.")
+                return
+            st.session_state.rag = rag
+            st.session_state.loaded_collection = st.session_state.collection
+
     if "messages" not in st.session_state:
         st.session_state.messages = []
     
@@ -26,11 +31,11 @@ def show():
 
     if submitted and question:
         with st.spinner("Consultando IA..."):
-            answer = rag.ask_question(question)
+            answer = st.session_state.rag.ask_question(question)
             st.session_state.messages.append((question, answer))
     
     st.divider()
     st.subheader("Histórico")
     for q, a in st.session_state.messages[::-1]:
         st.markdown(f"**Você:** {q}")
-        st.markdown(f"**Docstóteles:** {a}") 
+        st.markdown(f"**Docstóteles:** {a}")
