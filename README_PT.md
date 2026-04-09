@@ -1,3 +1,24 @@
+## ⚠️ Status Atual
+
+Este projeto está em desenvolvimento ativo.
+
+A aplicação funciona localmente (sob algumas configurações), mas estou enfrentando conflitos de dependências ao tentar padronizar o ambiente (principalmente com LangChain e embeddings).
+
+Estou trabalhando para estabilizar o ambiente e realizar o deploy no Streamlit Cloud.
+
+## 🧠 O que estou aprendendo
+
+- RAG (Retrieval-Augmented Generation)
+- Ecossistema LangChain
+- Embeddings e banco vetorial (FAISS)
+- Como lidar com conflitos reais de dependências em projetos Python
+
+## 🚧 Próximos passos
+
+- Resolver compatibilidade entre versões (LangChain)
+- Estabilizar o ambiente local
+- Fazer deploy no Streamlit Cloud
+
 # 📚 Docstóteles — Transforme qualquer documentação em um chat com IA
 
 O Docstóteles é uma aplicação simples de **RAG** que permite fazer **web scraping** de documentações técnicas e depois conversar com esse conteúdo usando IA.
