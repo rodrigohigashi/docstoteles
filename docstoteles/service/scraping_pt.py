@@ -18,9 +18,9 @@ class ScrapingService:
             # O map_result é um objeto MapResponse, não um dict
             # Vamos acessar os links diretamente
             if hasattr(map_result, 'links'):        # links estão dentro da raíz?      
-                links = map_result.links
+                links = map_result.links[:30]
             elif hasattr(map_result, 'data') and hasattr(map_result.data, 'links'):     # verifica o atributo data e    
-                links = map_result.data.links[:10]  # caso contrário, pegar apenas 10 desses links
+                links = map_result.data.links[:10]  
             else:
                 # Se não conseguir acessar, tentar como dict (fallback)
                 links = getattr(map_result, 'links', [])[:10]

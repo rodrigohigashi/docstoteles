@@ -18,9 +18,9 @@ class ScrapingService:
             # map_result is a MapResponse object, not a dict
             # so we access links directly
             if hasattr(map_result, 'links'):      
-                links = map_result.links
+                links = map_result.links[:30]
             elif hasattr(map_result, 'data') and hasattr(map_result.data, 'links'):
-                links = map_result.data.links[:10]  # otherwise, limit to 10 links
+                links = map_result.data.links[:10]  
             else:
                 # fallback in case the structure is different
                 links = getattr(map_result, 'links', [])[:10]
