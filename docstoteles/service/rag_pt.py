@@ -1,6 +1,6 @@
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader    # carregar os documentos
-from langchain_community.embeddings import FastEmbedEmbeddings                  # lib de integração
+from langchain_huggingface import HuggingFaceEndpointEmbeddings                 # lib de integração
 from langchain_community.vectorstores import FAISS                              # banco de dados multivetorial - pesos
 from langchain.text_splitter import RecursiveCharacterTextSplitter              # quebra de documentos em micro pedaços
 from langchain_groq import ChatGroq                                             # API da Groq
@@ -10,8 +10,9 @@ from langchain.prompts import PromptTemplate                                    
 class RAGService:
     def __init__(self):
         # Inicializar embeddings
-        self.embeddings = FastEmbedEmbeddings(            
-            model_name="BAAI/bge-small-en-v1.5"                   # modelo self embeddings
+        self.embeddings = HuggingFaceEndpointEmbeddings(
+            model="sentence-transformers/all-MiniLM-L6-v2",                     # embedding model
+            huggingfacehub_api_token=os.getenv("HF_TOKEN")                                      
         )
         
         # Inicializar LLM
