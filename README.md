@@ -1,10 +1,15 @@
-## ⚠️ Current Status
+## ✅ Current Status
 
-This project is currently under active development.
+The application is fully functional locally, including:
 
-The application works locally (under certain configurations), but I am facing dependency conflicts when trying to standardize the environment (especially with LangChain and embeddings).
+- Document ingestion and processing
+- Vector storage with FAISS
+- Retrieval-Augmented Generation (RAG) pipeline
+- Chat interface powered by Groq LLM
 
-I'm actively working on stabilizing the environment and deploying it to Streamlit Cloud.
+Recent updates focused on stabilizing dependencies and adapting the project to changes in the LangChain ecosystem.
+
+🚧 Deployment to Streamlit Cloud is in progress, as dependency compatibility is being refined for a fully reproducible environment.
 
 ## 🧠 What I'm learning
 
