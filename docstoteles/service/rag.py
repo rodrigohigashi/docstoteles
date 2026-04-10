@@ -1,18 +1,17 @@
 import os
 from langchain_community.document_loaders import DirectoryLoader, TextLoader    # load documents
-from langchain_huggingface import HuggingFaceEndpointEmbeddings                  # embeddings integration
+from langchain_community.embeddings import HuggingFaceEmbeddings                 # embeddings integration
 from langchain_community.vectorstores import FAISS                              # vector database
-from langchain.text_splitter import RecursiveCharacterTextSplitter              # split documents into smaller chunks
+from langchain_text_splitters import RecursiveCharacterTextSplitter              # split documents into smaller chunks
 from langchain_groq import ChatGroq                                             # Groq API
 from langchain.chains import RetrievalQA                                        # retrieval QA chain
 from langchain.prompts import PromptTemplate                                    # prompt creation
 
 class RAGService:
     def __init__(self):
-        # Initialize embeddings
-        self.embeddings = HuggingFaceEndpointEmbeddings(
-            model="sentence-transformers/all-MiniLM-L6-v2",                     # embedding model
-            huggingfacehub_api_token=os.getenv("HF_TOKEN")                                      
+        # Inicializar embeddings
+        self.embeddings = HuggingFaceEmbeddings(
+            model_name="all-MiniLM-L6-v2"
         )
         
         # Initialize LLM
