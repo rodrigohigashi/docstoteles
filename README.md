@@ -1,3 +1,25 @@
+## ⚠️ Current Status
+
+This project is currently under active development.
+
+The application works locally (under certain configurations), but I am facing dependency conflicts when trying to standardize the environment (especially with LangChain and embeddings).
+
+I'm actively working on stabilizing the environment and deploying it to Streamlit Cloud.
+
+## 🧠 What I'm learning
+
+- RAG (Retrieval-Augmented Generation)
+- LangChain ecosystem
+- Embeddings and vector databases (FAISS)
+- Handling real-world dependency conflicts in Python projects
+
+## 🚧 Next steps
+
+- Fix dependency compatibility (LangChain versions)
+- Stabilize local environment
+- Deploy to Streamlit Cloud
+
+
 # 📚 Docstoteles — Turn Any Documentation into an AI Chat Assistant
 
 Docstoteles is a lightweight RAG app that lets you scrape technical documentation from the web and chat with it using AI.
