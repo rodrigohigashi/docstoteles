@@ -1,10 +1,15 @@
-## ⚠️ Status Atual
+## ✅ Status Atual
 
-Este projeto está em desenvolvimento ativo.
+A aplicação está funcionando localmente, incluindo:
 
-A aplicação funciona localmente (sob algumas configurações), mas estou enfrentando conflitos de dependências ao tentar padronizar o ambiente (principalmente com LangChain e embeddings).
+- Ingestão e processamento de documentos
+- Armazenamento vetorial com FAISS
+- Pipeline de RAG (Retrieval-Augmented Generation)
+- Interface de chat utilizando Groq
 
-Estou trabalhando para estabilizar o ambiente e realizar o deploy no Streamlit Cloud.
+As atualizações recentes focaram na estabilização das dependências e adaptação às mudanças no ecossistema do LangChain.
+
+🚧 O deploy no Streamlit Cloud está em andamento, enquanto a compatibilidade das dependências é refinada para um ambiente totalmente reproduzível.
 
 ## 🧠 O que estou aprendendo
 
