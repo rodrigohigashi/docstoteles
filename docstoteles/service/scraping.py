@@ -7,7 +7,7 @@ class ScrapingService:
         self.api_key = os.getenv("FIRECRAWL_API_KEY")
     #    self.api_url = os.getenv("FIRECRAWL_API_URL")
 
-         self.app = V1FirecrawlApp(api_key=self.api_key)
+        self.app = V1FirecrawlApp(api_key=self.api_key)
     #    self.app = V1FirecrawlApp(api_key=self.api_key, api_url=self.api_url)
 
     def scrape_website(self, url, collection_name):
