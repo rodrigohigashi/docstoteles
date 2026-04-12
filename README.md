@@ -1,15 +1,11 @@
 ## ✅ Current Status
 
-The application is fully functional locally, including:
+The application is fully functional locally and successfully deployed on Streamlit Cloud.
 
-- Document ingestion and processing
-- Vector storage with FAISS
-- Retrieval-Augmented Generation (RAG) pipeline
-- Chat interface powered by Groq LLM
-
-Recent updates focused on stabilizing dependencies and adapting the project to changes in the LangChain ecosystem.
-
-🚧 Deployment to Streamlit Cloud is in progress, as dependency compatibility is being refined for a fully reproducible environment.
+Recent updates focused on:
+- Stabilizing dependencies
+- Fixing LangChain ecosystem compatibility
+- Ensuring reproducible environment across local and cloud setups
 
 ## 🧠 What I'm learning
 
@@ -20,12 +16,15 @@ Recent updates focused on stabilizing dependencies and adapting the project to c
 
 ## 🚧 Next steps
 
-- Fix dependency compatibility (LangChain versions)
-- Stabilize local environment
-- Deploy to Streamlit Cloud
-
+- Improve scraping performance and limits
+- Add source citations in answers
+- Enhance UI/UX experience
+- Support multiple document collections in parallel
 
 # 📚 Docstoteles — Turn Any Documentation into an AI Chat Assistant
+
+👉 Live Demo (EN): https://docstoteles-en.streamlit.app/
+👉 Live Demo (PT): https://docstoteles-pt.streamlit.app/
 
 Docstoteles is a lightweight RAG app that lets you scrape technical documentation from the web and chat with it using AI.
 
@@ -97,7 +96,7 @@ docstoteles/
 │   ├── rag_pt.py
 │   ├── scraping.py
 │   └── scraping_pt.py
-└── .env  # create this locally
+└── .env.example  # environment variables (do not commit .env)
 
 ⚙️ Installation
 1) Clone the repository
@@ -124,7 +123,6 @@ GROQ_API_KEY
 
 ### English version
 streamlit run docstoteles/app.py
-
 ### Portuguese version
 streamlit run docstoteles/app_pt.py
 
@@ -160,6 +158,7 @@ Better UI/UX
 Collection deletion
 Source citations in answers
 Deploy to the cloud
+
 🧑‍💻 Author
 
 Built as a hands-on AI/RAG project to explore how documentation can be transformed into a conversational assistant.

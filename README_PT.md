@@ -1,15 +1,11 @@
 ## ✅ Status Atual
 
-A aplicação está funcionando localmente, incluindo:
+A aplicação está totalmente funcional localmente e também implantada no Streamlit Cloud.
 
-- Ingestão e processamento de documentos
-- Armazenamento vetorial com FAISS
-- Pipeline de RAG (Retrieval-Augmented Generation)
-- Interface de chat utilizando Groq
-
-As atualizações recentes focaram na estabilização das dependências e adaptação às mudanças no ecossistema do LangChain.
-
-🚧 O deploy no Streamlit Cloud está em andamento, enquanto a compatibilidade das dependências é refinada para um ambiente totalmente reproduzível.
+As atualizações recentes focaram em:
+- Estabilização de dependências
+- Correção de compatibilidade no ecossistema LangChain
+- Garantia de um ambiente reproduzível entre local e cloud
 
 ## 🧠 O que estou aprendendo
 
@@ -20,11 +16,15 @@ As atualizações recentes focaram na estabilização das dependências e adapta
 
 ## 🚧 Próximos passos
 
-- Resolver compatibilidade entre versões (LangChain)
-- Estabilizar o ambiente local
-- Fazer deploy no Streamlit Cloud
+- Melhorar desempenho e limites do web scraping
+- Adicionar citações de fontes nas respostas
+- Melhorar a experiência de interface (UI/UX)
+- Suporte a múltiplas coleções simultâneas
 
 # 📚 Docstóteles — Transforme qualquer documentação em um chat com IA
+### 🌍 Versão em inglês
+👉 Demonstração ao vivo (EN): https://docstoteles-en.streamlit.app/
+👉 Demonstração ao vivo (PT): https://docstoteles-pt.streamlit.app/
 
 O Docstóteles é uma aplicação simples de **RAG** que permite fazer **web scraping** de documentações técnicas e depois conversar com esse conteúdo usando IA.
 
@@ -96,7 +96,7 @@ docstoteles/
 │   ├── rag_pt.py
 │   ├── scraping.py
 │   └── scraping_pt.py
-└── .env  # criado localmente
+└── .env.exemplo  # variáveis de ambiente (não subir .env real)
 
 ⚙️ Instalação
 1) Clone o repositório
@@ -123,7 +123,6 @@ GROQ_API_KEY
 
 ### Versão em inglês
 streamlit run docstoteles/app.py
-
 ### Versão em português
 streamlit run docstoteles/app_pt.py
 
@@ -159,6 +158,13 @@ Melhorias de UI/UX
 Exclusão de coleções
 Citação de fontes nas respostas
 Deploy em nuvem
+
+### Versão em inglês
+👉 Live app: https://docstoteles-en.streamlit.app/
+
+### Versão em português
+👉 Live app: https://docstoteles-pt.streamlit.app/
+
 🧑‍💻 Autor
 
 Projeto construído de forma prática para explorar como documentações podem ser transformadas em assistentes conversacionais com IA.
