@@ -5,7 +5,7 @@ from service.scraping import ScrapingService
 def show():
     st.header("🔍 Web Scraping")
     
-    scraper = ScrapingService()
+    scraper = None
     
     # Data submission mechanism
     with st.form("scraping_form"):
@@ -14,6 +14,7 @@ def show():
         submitted = st.form_submit_button("Start Scraping")  # submit button
     
     if submitted and url and collection_name:
+        scraper = ScrapingService()
         with st.spinner("Extracting content..."):  # loading spinner shown to the user
             result = scraper.scrape_website(url, collection_name)
             
