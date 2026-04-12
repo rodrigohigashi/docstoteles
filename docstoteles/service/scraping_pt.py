@@ -5,9 +5,10 @@ from firecrawl.v1 import V1FirecrawlApp # pra fazer o web scraping
 class ScrapingService:
     def __init__(self):             # 2 propriedades
         self.api_key = os.getenv("FIRECRAWL_API_KEY")
-        self.api_url = os.getenv("FIRECRAWL_API_URL")
+    #   self.api_url = os.getenv("FIRECRAWL_API_URL")
 
-        self.app = V1FirecrawlApp(api_key=self.api_key, api_url=self.api_url)
+        self.app = V1FirecrawlApp(api_key=self.api_key)
+    #   self.app = V1FirecrawlApp(api_key=self.api_key, api_url=self.api_url)
     
     def scrape_website(self, url, collection_name):
         """Scraping completo em uma função"""

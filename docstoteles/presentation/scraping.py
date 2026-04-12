@@ -5,8 +5,6 @@ from service.scraping import ScrapingService
 def show():
     st.header("🔍 Web Scraping")
     
-    scraper = None
-    
     # Data submission mechanism
     with st.form("scraping_form"):
         url = st.text_input("Website URL:", placeholder="https://example.com")
